@@ -1,7 +1,15 @@
+body {
+    padding-top: 66px;
+}
+
 .header {
     background-color: rgb(64, 64, 190);
     padding: 10px;
     text-align: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
 }
 
 .search-form {
@@ -38,7 +46,6 @@
     background-color: rgb(64, 64, 190);
     padding: 10px;
     text-align: center;
-
 
     .load-more {
         padding: 14px 30px;
@@ -78,10 +85,7 @@
 
             b {
                 display: block;
-
             }
         }
     }
-
-    
 }
