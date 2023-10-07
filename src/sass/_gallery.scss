@@ -54,3 +54,38 @@
         }
     }
 }
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px calc(4% / 3);
+    padding: 1%;
+    
+    .photo-card {
+        width: 24%;
+        text-align: center;
+        border-radius: 7px;
+        box-shadow: 0 3px 3px #bbb;
+
+        img {
+            width: 100%;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+            b {
+                display: block;
+
+            }
+        }
+    }
+
+    
+}
+// * {
+//     padding: 2px;
+//     border: 1px dashed grey;
+// }
