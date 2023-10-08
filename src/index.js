@@ -30,10 +30,10 @@ function showLoadMoreBtn() {
 }
 
 function addImageToPage(imageData) {
-    const { webformatURL, likes, views, comments, downloads } = imageData;
+    const { webformatURL, likes, views, comments, downloads, tags } = imageData;
     const photoCard = `
         <div class="photo-card">
-          <img src="${webformatURL}" loading="lazy" alt="" />
+          <img src="${webformatURL}" loading="lazy" alt="${tags}" />
           <div class="info">
             <p class="info-item"><b>Likes</b> ${likes}</p>
             <p class="info-item"><b>Views</b> ${views}</p>
