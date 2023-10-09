@@ -62,7 +62,7 @@ function addImagesToPage(imagesData, total) {
     }
 }
 
-function submitHandler(event) {
+async function submitHandler(event) {
     event.preventDefault();
 
     galleryContainer.innerHTML = '';
@@ -70,7 +70,7 @@ function submitHandler(event) {
 
     page = 1;
 
-    search(lastQuery, page)
+    await search(lastQuery, page)
         .then(response => response.data)
         .then(jsonData => {
             const foundImagesCount = jsonData.totalHits;
@@ -86,13 +86,13 @@ function submitHandler(event) {
         .catch(reason => Notify.failure(reason));
 }
 
-function clickLoadMoreHandler() {
+async function clickLoadMoreHandler() {
     page++;
 
-    search(lastQuery, page)
+    await search(lastQuery, page)
         .then(response => response.data)
         .then(jsonData => {
-            if (!jsonData.hits.length) {
+            if (!jsonData.hits.length || isLastPage(jsonData.hits.length, jsonData.totalHits)) {
                 Notify.failure("We're sorry, but you're reached the end of search results.");
             }
 
